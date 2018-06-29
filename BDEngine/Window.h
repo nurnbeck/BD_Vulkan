@@ -14,8 +14,8 @@ namespace BDEngine
 		GLFWwindow* window;
 
 		//dimensions for the window
-		int windowWidth = 800;
-		int windowHeight = 600;
+		int windowWidth = 1280;
+		int windowHeight = 720;
 	private:
 
 		

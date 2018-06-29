@@ -20,7 +20,7 @@ namespace BDEngine
 
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
-		window = glfwCreateWindow(windowWidth, windowHeight, "Planet Vulkan", nullptr, nullptr);
+		window = glfwCreateWindow(windowWidth, windowHeight, "Beamdog", nullptr, nullptr);
 
 		return 0;
 	}

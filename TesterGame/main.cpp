@@ -4,6 +4,11 @@
 #include <stdexcept>
 #include <iostream>
 
+//for memory leaks
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 int main(int argc, char** argv)
 {
 	TesterGame testGame;

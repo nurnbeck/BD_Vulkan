@@ -107,9 +107,10 @@ namespace BDEngine
 			uniformBuffer->Update(&logicalDevice, *swapchain->GetExtent());
 
 			DrawFrame();
+			vkDeviceWaitIdle( logicalDevice );
 		}
 
-		vkDeviceWaitIdle(logicalDevice);
+		//vkDeviceWaitIdle(logicalDevice);
 		CleanupVulkan();
 	}
 
@@ -149,7 +150,7 @@ namespace BDEngine
 		VkApplicationInfo appInfo = {};
 		appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
 		appInfo.pNext = nullptr;
-		appInfo.pApplicationName = "Planet Vulkan";
+		appInfo.pApplicationName = "Beamdog Games";
 		appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
 		appInfo.pEngineName = "No Engine";
 		appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
@@ -794,6 +795,7 @@ namespace BDEngine
 
 	void BeamDog::DrawFrame()
 	{
+		//return;
 		uint32_t imageIndex;
 		vkAcquireNextImageKHR(logicalDevice, *swapchain->GetSwapchain(), std::numeric_limits<uint64_t>::max(), imageAvailableSemaphore, VK_NULL_HANDLE, &imageIndex);
 
@@ -814,6 +816,7 @@ namespace BDEngine
 		{
 			throw std::runtime_error("Failed to submit draw command buffer");
 		}
+
 
 		VkPresentInfoKHR presentInfo = {};
 		presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
