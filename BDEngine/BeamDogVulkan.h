@@ -13,6 +13,8 @@
 #include "BDUniformBuffer.h"
 #include "BDQueueFamily.h"
 #include "BDCommandPool.h"
+#include "BDMesh.h"
+#include "Globals.h"
 
 namespace BDEngine
 {

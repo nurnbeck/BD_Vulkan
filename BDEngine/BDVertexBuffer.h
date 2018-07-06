@@ -15,16 +15,16 @@ namespace BDEngine
 		void Cleanup(const VkDevice* logicalDevice);
 
 		//Getters
-		uint32_t GetVerticesSize() { return vertices.size(); }
+		//uint32_t GetVerticesSize() { return vertices.size(); }
 	private:
 
-		const std::vector<Vertex> vertices = 
+	/*	const std::vector<Vertex> vertices = 
 		{
 			{ { -0.5f, -0.5f },{ 1.0f, 1.0f, 1.0f } },
 			{ {0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
 			{ { 0.5f, 0.5f },{ 0.0f, 1.0f, 0.0f } },
 			{ {-0.5f, 0.5f},{ 0.0f, 0.0f, 1.0f } }
-		};
+		};*/
 	};
 }
 

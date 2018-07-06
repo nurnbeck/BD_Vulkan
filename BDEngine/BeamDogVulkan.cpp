@@ -558,6 +558,7 @@ namespace BDEngine
 
 	void BeamDog::CreateGraphicsPipeline()
 	{
+		//add shaders to the pipeline
 		auto vertShaderCode = ReadFile("Shaders/vert.spv");
 		auto fragShaderCode = ReadFile("Shaders/frag.spv");
 
@@ -748,6 +749,7 @@ namespace BDEngine
 			renderPassInfo.framebuffer = *swapchain->GetFramebuffer(i);
 			renderPassInfo.renderArea.offset = { 0,0 };
 			renderPassInfo.renderArea.extent = *swapchain->GetExtent();
+			//blackground color
 			VkClearValue clearColor = { 0.0f, 0.0f, 0.0f, 1.0f };
 			renderPassInfo.clearValueCount = 1;
 			renderPassInfo.pClearValues = &clearColor;
@@ -765,7 +767,8 @@ namespace BDEngine
 
 			vkCmdBindDescriptorSets(commandBuffers[i], VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &descriptorSet, 0, nullptr);
 
-			vkCmdDrawIndexed(commandBuffers[i], static_cast<uint32_t>(indexBuffer->GetIndicesSize()), 1, 0, 0, 0);
+			//vkCmdDrawIndexed(commandBuffers[i], static_cast<uint32_t>(indexBuffer->GetIndicesSize()), 1, 0, 0, 0);
+			vkCmdDrawIndexed(commandBuffers[i], static_cast<uint32_t>(RenderableObject.GetIndexCount()), 1, 0, 0, 0);
 
 			vkCmdEndRenderPass(commandBuffers[i]);
 

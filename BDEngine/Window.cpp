@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "BDMesh.h"
 
 namespace BDEngine
 {

@@ -1,9 +1,10 @@
 #include "TesterGame.h"
-
+#include "BDEngine/Globals.h"
 
 
 TesterGame::TesterGame()
 {
+	RenderableObject.Load( "D:\\BeamDogVulkan\\BeamDogVulkan\\TesterGame\\Meshes\\utah-teapot.obj" );
 }
 
 

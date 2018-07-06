@@ -25,6 +25,11 @@
   <ItemGroup>
     <ClInclude Include="TesterGame.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\compile.bat" />
+    <None Include="Shaders\shader.frag" />
+    <None Include="Shaders\shader.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE9DA968-FC75-4F50-A3D9-9465615B1655}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

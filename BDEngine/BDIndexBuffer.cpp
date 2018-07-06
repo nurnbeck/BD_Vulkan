@@ -1,5 +1,5 @@
 #include "BDIndexBuffer.h"
-
+#include "Globals.h"
 
 namespace BDEngine
 {
@@ -18,7 +18,9 @@ namespace BDEngine
 	void BDIndexBuffer::CreateIndexBuffer(const VkDevice* logicalDevice, const VkPhysicalDevice* physicalDevice, const VkSurfaceKHR* surface,
 		const VkCommandPool* transferCommandPool, const VkQueue* transferQueue)
 	{
-		VkDeviceSize bufferSize = sizeof(indices[0]) * indices.size();
+		//VkDeviceSize bufferSize = sizeof(indices[0]) * indices.size();
+		
+		VkDeviceSize bufferSize = sizeof( int32_t ) * RenderableObject.GetIndexCount( );
 
 		VkBuffer stagingBuffer;
 		VkDeviceMemory stagingBufferMemory;
@@ -28,7 +30,8 @@ namespace BDEngine
 
 		void* data;
 		vkMapMemory(*logicalDevice, stagingBufferMemory, 0, bufferSize, 0, &data);
-		memcpy(data, indices.data(), (size_t)bufferSize);
+		//memcpy(data, indices.data(), (size_t)bufferSize);
+		memcpy(data, RenderableObject.GetIndexData(), (size_t)bufferSize);
 		vkUnmapMemory(*logicalDevice, stagingBufferMemory);
 
 		createBuffer(logicalDevice, physicalDevice, surface, bufferSize, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT,

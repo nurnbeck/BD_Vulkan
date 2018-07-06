@@ -16,14 +16,14 @@ namespace BDEngine
 		void CleanupIndexBuffer(const VkDevice* logicalDevice);
 
 		//Getters
-		uint32_t GetIndicesSize() { return indices.size(); }
+		//uint32_t GetIndicesSize() { return indices.size(); }
 
 	private:
 
-		const std::vector<uint32_t> indices =
-		{
-			0,1,2,2,3,0
-		};
+		//const std::vector<uint32_t> indices =
+		//{
+		//	0,1,2,2,3,0
+		//};
 	};
 }
 

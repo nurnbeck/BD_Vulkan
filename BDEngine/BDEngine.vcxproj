@@ -164,12 +164,14 @@
     <ClInclude Include="BDBuffer.h" />
     <ClInclude Include="BDCommandPool.h" />
     <ClInclude Include="BDIndexBuffer.h" />
+    <ClInclude Include="BDMesh.h" />
     <ClInclude Include="BDQueueFamily.h" />
     <ClInclude Include="BDSwapchain.h" />
     <ClInclude Include="BDUniformBuffer.h" />
     <ClInclude Include="BDVertex.h" />
     <ClInclude Include="BDVertexBuffer.h" />
     <ClInclude Include="BeamDogVulkan.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="VDeleter.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
@@ -177,11 +179,13 @@
     <ClCompile Include="BDBuffer.cpp" />
     <ClCompile Include="BDCommandPool.cpp" />
     <ClCompile Include="BDIndexBuffer.cpp" />
+    <ClCompile Include="BDMesh.cpp" />
     <ClCompile Include="BDQueueFamily.cpp" />
     <ClCompile Include="BDSwapchain.cpp" />
     <ClCompile Include="BDUniformBuffer.cpp" />
     <ClCompile Include="BDVertexBuffer.cpp" />
     <ClCompile Include="BeamDogVulkan.cpp" />
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
